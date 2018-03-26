@@ -1,4 +1,4 @@
-#Classic Arcade Game Frogger
+CLASSIC ARCADE GAME FROGGER
 
 A browser-based arcade game.
 
@@ -13,7 +13,7 @@ A browser-based arcade game.
 2. Player can move left, right, up and down using arrow keys.
 3. Once Player collides with an Enemy, the game is reset and the Player moves back to the start square. Miss count is increased by one.
 4. Once the player reaches the water the game is won, Player moves back to the start square and scores is increased by one.
-5. Future improvements: add Level count and based on it increase number of Enemies and their speed. 
+5. Future improvements: add Level count and based on it increase number of Enemies and their speed.
 
 ## Information
 
