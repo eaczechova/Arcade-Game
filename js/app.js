@@ -25,13 +25,28 @@ Enemy.prototype.update = function(dt) {
       this.y = enemyLocation[Math.floor((Math.random()) * 3)];
       this.speed = Math.floor(Math.random() * 200)+100;
     }
+
+/* Collision detection is between two circles based on algorithms detecting collision in 2D
+https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection.
+*/
+
+  var dx = this.x - player.x;
+  var dy = player.y - this.y;
+  var distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < this.radius + player.radius) {
+    player.y = 400;
+    player.x = 200;
+    document.getElementById('miss').innerHTML = resultBoard.miss;
+    resultBoard.miss++;
+  }
 };
 
 // Draw the enemy on the screen, required method for game
 
 Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  drawCircle(this.x+50, this.y+115 , this.radius, "red");
+  // drawCircle(this.x+50, this.y+115, this.radius, "red");
 };
 
 /*
@@ -49,17 +64,17 @@ var Player = function(x, y) {
 
 // Updates Player's position once it reaches the water and increase its score by one.
 
-Player.prototype.update = function(dt) {
-  if(this.y === -25) {
-    this.y = 400;
+Player.prototype.update = function() {
+  if (this.y === -25) {
     resultBoard.score++;
     document.getElementById('score').innerHTML = resultBoard.score;
+    this.y = 400;
   }
 };
 
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.img), this.x, this.y);
-  drawCircle(this.x+50, this.y+100, this.radius, "green");
+  // drawCircle(this.x+50, this.y+100, this.radius, "green");
 }
 
 /* Function checkes for key type and moves Player from it current location. The second
@@ -109,13 +124,13 @@ document.addEventListener('keyup', function(e) {
 in order to find collision area.
 */
 
-function drawCircle(x, y, radius, color) {
-  ctx.beginPath();
-  ctx.arc(x, y, radius, 0, 2*Math.PI);
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = color;
-  ctx.stroke();
-}
+// function drawCircle(x, y, radius, color) {
+//   ctx.beginPath();
+//   ctx.arc(x, y, radius, 0, 2*Math.PI);
+//   ctx.lineWidth = 2;
+//   ctx.strokeStyle = color;
+//   ctx.stroke();
+// }
 
 var resultBoard = {
   score: 0,
