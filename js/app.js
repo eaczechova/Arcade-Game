@@ -28,8 +28,10 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
+
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  drawCircle(this.x+50, this.y+115 , this.radius, "red");
 };
 
 /*
@@ -54,6 +56,11 @@ Player.prototype.update = function(dt) {
     document.getElementById('score').innerHTML = resultBoard.score;
   }
 };
+
+Player.prototype.render = function() {
+  ctx.drawImage(Resources.get(this.img), this.x, this.y);
+  drawCircle(this.x+50, this.y+100, this.radius, "green");
+}
 
 /* Enemy and Player objects are instantiate. All Enemy objects are placed in
 an array called allEnemies, while Player object is in a variable called player.
@@ -81,3 +88,15 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+/* Add helper function drawCircle() that draw circle around Player and Enemy objects
+in order to find collision area.
+*/
+
+function drawCircle(x, y, radius, color) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, 2*Math.PI);
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = color;
+  ctx.stroke();
+}
