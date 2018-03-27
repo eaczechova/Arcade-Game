@@ -116,3 +116,8 @@ function drawCircle(x, y, radius, color) {
   ctx.strokeStyle = color;
   ctx.stroke();
 }
+
+var resultBoard = {
+  score: 0,
+  miss: 0,
+};

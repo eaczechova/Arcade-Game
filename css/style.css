@@ -1,4 +1,10 @@
 body {
-    text-align: center;
-    font-family: 'Audiowide', cursive;  
+  text-align: center;
+  font-family: 'Audiowide', cursive;
+}
+
+.result-board p {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
 }
