@@ -83,13 +83,13 @@ condition prevents Player to leave the playground.
 
 Player.prototype.handleInput = function(key) {
   if (key === 'left' && this.x > 0) {
-    this.x = this.x - 100;
+    this.x = this.x - 101;
   } else if (key === 'up' && this.y > 0) {
-    this.y = this.y - 85;
+    this.y = this.y - 83;
   } else if (key === 'right' && this.x < 400) {
-    this.x = this.x + 100;
+    this.x = this.x + 101;
   } else if (key === 'down' && this.y < 400) {
-    this.y = this.y + 85;
+    this.y = this.y + 83;
   }
 }
 
