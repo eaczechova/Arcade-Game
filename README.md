@@ -1,7 +1,7 @@
-CLASSIC ARCADE GAME FROGGER
+# CLASSIC ARCADE GAME FROGGER
 
 A browser-based arcade game.
-https://eaczechova.github.io/Arcade-Game/
+Preview of the game can be found [here](https://eaczechova.github.io/Arcade-Game/).
 
 ## Table of Contents
 
@@ -18,4 +18,6 @@ https://eaczechova.github.io/Arcade-Game/
 
 ## Information
 
-The project is done as part of the Front-End Web Developer Nanodegree program by Udacity. All art assets and game engine files have been provided ahead.
+The project is done as part of the Front-End Web Developer Nanodegree program by Udacity.
+
+All art assets and game engine files have been provided ahead.
